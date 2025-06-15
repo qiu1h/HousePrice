@@ -75,6 +75,7 @@ print("交叉验证 RMSE:", rmse_cv(lasso).mean())
 # 预测（注意目标变量已 log 过）
 y_pred_log = lasso.predict(X_test)
 y_pred = np.expm1(y_pred_log)  # 还原 SalePrice
+# y_pred = lasso.predict(X_test)
 
 # 生成提交文件
 submission = pd.DataFrame({
